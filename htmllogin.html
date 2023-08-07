@@ -91,20 +91,29 @@
 <body>
     <div class="box">
         <h1>Login!</h1>
-        <form action="noaction.php">
+        <form onsubmit="myFunction(event)">
             <h3>Username</h3>
             <div class="container">
-                <input type="text" name="" placeholder="Enter your name">
+                <input type="text" id="user" name="" placeholder="Enter your name">
             </div>
             <h3>Password</h3>
             <div class="container">
                 <input type="password" name="" placeholder="Enter your Password">
             </div>
             <br>
-            <button class="btn" > Submit </button>
+            <button class="btn" type="submit" > Submit </button>
             <a href="/project 3/htmlsignup.html" style="text-decoration:none"><h4>SignUp?</h4></a>
         </form>
     </div>
 </body>
+<script>
+    function myFunction(e) {
+        e.preventDefault();
+      localStorage.setItem('user',document.getElementById("user").value);
+      window.location.href="/project%203/welcome.html"
+      return false
+    }
+</script>
+    
 
 </html>
